@@ -1,0 +1,19 @@
+name: Run Docker Build Script
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run docker-build.sh
+        run: |
+          chmod +x docker-build.sh
+          ./docker-build.sh
