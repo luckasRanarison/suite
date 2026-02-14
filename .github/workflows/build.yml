@@ -17,3 +17,9 @@ jobs:
         run: |
           chmod +x docker-build.sh
           ./docker-build.sh
+
+      - name: Upload suite.gba
+        uses: actions/upload-artifact@v4
+        with:
+          name: suite-gba
+          path: build/suite.gba
