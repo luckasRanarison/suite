@@ -18,8 +18,8 @@ jobs:
           chmod +x docker-build.sh
           ./docker-build.sh
 
-      - name: Upload suite.gba
+      - name: Upload suite deploy ZIP artifact
         uses: actions/upload-artifact@v4
         with:
-          name: suite-gba
-          path: build/suite.gba
+          name: suite-deploy
+          path: deploy/*.zip
